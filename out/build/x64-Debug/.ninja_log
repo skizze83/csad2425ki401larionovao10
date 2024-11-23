@@ -1,0 +1,5 @@
+# ninja log v5
+1	11	0	clean	189f6e91815e059a
+9	778	7540939241579988	CMakeFiles/RockPaperScissors.dir/client/src/main.cpp.obj	a0c0f40f65fdff5f
+13	802	7540939241837953	CMakeFiles/RockPaperScissors.dir/client/src/serial.cpp.obj	4dd4180ecb79467d
+802	1224	7540939245662599	RockPaperScissors.exe	2e974cd994b83ad0

@@ -211,6 +211,15 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
+ClientServerProject_BINARY_DIR:STATIC=D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10/out/build/x64-Debug
+
+//Value Computed by CMake
+ClientServerProject_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+ClientServerProject_SOURCE_DIR:STATIC=D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10
+
+//Value Computed by CMake
 RockPaperScissors_BINARY_DIR:STATIC=D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10/out/build/x64-Debug
 
 //Value Computed by CMake

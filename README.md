@@ -19,16 +19,23 @@ Initialize the GIT repository for the project.
 Create comunication server\client. Server - Arduino Uno
 ci.yalm - for Continuous Integration
 CMakeLists - configuration for building the project  
-To check how send and ricieves messedges run RockPaperScissors.exe
-
+To check how send and receives messages run RockPaperScissors.exe
 
 ## Task 3:
-Develope RockPaperScissors game. Created menu, game logic and developed communication with server.  
-XML file for game statistics. 
+Develop RockPaperScissors game. Created menu, game logic and developed communication with server.  
+XML file for internal game statistics. 
 ci.yalm - for Continuous Integration  
 CMakeLists - configuration for building the project.  
 To open game run RockPaperScissors.exe  
 
+## Task 4:
+Create Doxygen documentation. Created latex and html form.
+XML file for game statistics. 
+ci.yalm - for Continuous Integration  
+CMakeLists - configuration for building the project.  
+Doxyfile - configuration for creating doxygen documentation
+To open game run RockPaperScissors.exe  
+To check documentation run ./html/index.html
 
 ## Technologies
 - Language: C/C++

@@ -1,3 +1,8 @@
+/**
+ * @file game.cpp
+ * @brief Contains functions for managing game state, processing player choices, and handling game statistics.
+ */
+
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -9,8 +14,14 @@ using namespace std;
 
 // Global variables for statistics
 int player1Wins = 0, player2Wins = 0, draws = 0, totalGames = 0;
-int lastGameMode = -1;  // Initial value to determine the mode change
+int lastGameMode = -1;  ///< Initial value to determine the mode change
 
+/**
+ * @brief Converts a number to the corresponding string representation of a player's choice.
+ *
+ * @param number The number representing a choice (1 for rock, 2 for scissors, 3 for paper).
+ * @return A string representing the choice ("rock", "scissors", or "paper").
+ */
 std::string getChoiceFromNumber(int number) {
     if (number == 1) return "rock";
     else if (number == 2) return "scissors";
@@ -18,6 +29,13 @@ std::string getChoiceFromNumber(int number) {
     return "";
 }
 
+/**
+ * @brief Prompts the user to enter their choice and returns the corresponding string representation.
+ *
+ * This function continues to ask for input until the user enters a valid choice (1, 2, or 3).
+ *
+ * @return A string representing the user's choice ("rock", "scissors", or "paper").
+ */
 std::string getUserChoice() {
     int choice;
     while (true) {
@@ -35,6 +53,16 @@ std::string getUserChoice() {
     }
 }
 
+/**
+ * @brief Parses the server response and extracts player choices and game result.
+ *
+ * The function uses regular expressions to extract the information from the server response string.
+ *
+ * @param response The server response in JSON format.
+ * @param player1 The string to store Player 1's choice.
+ * @param player2 The string to store Player 2's choice.
+ * @param result The string to store the game result ("Player 1 wins", "Player 2 wins", or "draw").
+ */
 void parseResponse(const std::string& response, std::string& player1, std::string& player2, std::string& result) {
     std::regex player1Regex("\"Player1\": \"(.*?)\"");
     std::regex player2Regex("\"Player2\": \"(.*?)\"");
@@ -58,6 +86,11 @@ void parseResponse(const std::string& response, std::string& player1, std::strin
     }
 }
 
+/**
+ * @brief Resets the game statistics (wins, draws, and total games).
+ *
+ * This function is called to reset the statistics at the start of a new game mode or to clear accumulated statistics.
+ */
 void resetStatistics() {
     player1Wins = 0;
     player2Wins = 0;
@@ -65,10 +98,22 @@ void resetStatistics() {
     totalGames = 0;
 }
 
+/**
+ * @brief Saves the current game state to an XML file.
+ *
+ * This function writes the current game state, including the players' choices, the result, and statistics, to the "game_state.xml" file.
+ * It also resets statistics if a new game mode is selected.
+ *
+ * @param player1 The choice made by Player 1.
+ * @param player2 The choice made by Player 2.
+ * @param result The result of the game ("Player 1 wins", "Player 2 wins", or "draw").
+ * @param currentGameMode The current game mode.
+ * @param resetStats Whether to reset the statistics (default is true).
+ */
 void saveGameState(const std::string& player1, const std::string& player2, const std::string& result, int currentGameMode, bool resetStats = true) {
     if (resetStats && currentGameMode != lastGameMode) {
         resetStatistics();
-        totalGames = 0;  // Reset the total number of games when changing the mode
+        totalGames = 0;  ///< Reset the total number of games when changing the mode
         lastGameMode = currentGameMode;
     }
 
@@ -112,6 +157,17 @@ void saveGameState(const std::string& player1, const std::string& player2, const
     std::cout << "Game state saved to game_state.xml" << std::endl;
 }
 
+/**
+ * @brief Loads the saved game state from the "game_state.xml" file.
+ *
+ * This function reads the saved game state from the XML file, including the players' choices, the result, and statistics.
+ *
+ * @param player1 The string to store Player 1's choice.
+ * @param player2 The string to store Player 2's choice.
+ * @param result The string to store the game result ("Player 1 wins", "Player 2 wins", or "draw").
+ * @param currentGameMode The integer to store the current game mode.
+ * @return true if the game state was successfully loaded; false otherwise.
+ */
 bool loadGameState(std::string& player1, std::string& player2, std::string& result, int& currentGameMode) {
     std::ifstream file("game_state.xml");
     std::string line;

@@ -1,12 +1,8 @@
 # ninja log v5
-2	14	0	clean	189f6e91815e059a
-9	778	7540939241579988	CMakeFiles/RockPaperScissors.dir/client/src/main.cpp.obj	a0c0f40f65fdff5f
-13	802	7540939241837953	CMakeFiles/RockPaperScissors.dir/client/src/serial.cpp.obj	4dd4180ecb79467d
-802	1224	7540939245662599	RockPaperScissors.exe	2e974cd994b83ad0
 1	11	0	clean	189f6e91815e059a
-23	793	7540952954481869	CMakeFiles/RockPaperScissors.dir/client/src/menu.cpp.obj	d099d99ed79482e
-28	1117	7540952957703683	CMakeFiles/RockPaperScissors.dir/client/src/serial.cpp.obj	4dd4180ecb79467d
 10	1137	7540952957912943	CMakeFiles/RockPaperScissors.dir/client/src/main.cpp.obj	a0c0f40f65fdff5f
-19	1287	7540952959420079	CMakeFiles/RockPaperScissors.dir/client/src/game_logic.cpp.obj	f758b45c82f59471
 16	1551	7540952962039273	CMakeFiles/RockPaperScissors.dir/client/src/game.cpp.obj	a749cd9a817bed23
+28	1117	7540952957703683	CMakeFiles/RockPaperScissors.dir/client/src/serial.cpp.obj	4dd4180ecb79467d
 1552	1941	7540952965052065	RockPaperScissors.exe	9f9c7f8c94cd5c7d
+23	793	7540952954481869	CMakeFiles/RockPaperScissors.dir/client/src/menu.cpp.obj	d099d99ed79482e
+19	1287	7540952959420079	CMakeFiles/RockPaperScissors.dir/client/src/game_logic.cpp.obj	f758b45c82f59471

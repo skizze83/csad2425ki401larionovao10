@@ -1,0 +1,82 @@
+\doxysection{client/src/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{client/src/main.cpp@{client/src/main.cpp}}
+
+
+Main program for the game with serial communication and game modes.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8cpp_a4eb2c9c2a3276a8c723254ce171eafeb}{initialize\+New\+Game}} (int game\+Mode)
+\begin{DoxyCompactList}\small\item\em Initializes a new game with the given game mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Main function to start the game program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a4357ae4b81fecf249d80237ed567b433}{current\+Game\+Mode}} = -\/1
+\begin{DoxyCompactList}\small\item\em Current game mode (extern variable). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main program for the game with serial communication and game modes. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_a4eb2c9c2a3276a8c723254ce171eafeb}\index{main.cpp@{main.cpp}!initializeNewGame@{initializeNewGame}}
+\index{initializeNewGame@{initializeNewGame}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{initializeNewGame()}{initializeNewGame()}}
+{\footnotesize\ttfamily \label{main_8cpp_a4eb2c9c2a3276a8c723254ce171eafeb} 
+void initialize\+New\+Game (\begin{DoxyParamCaption}\item[{int}]{game\+Mode}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new game with the given game mode. 
+
+This function resets statistics and initializes the game state with the chosen game mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Mode} & The game mode to initialize. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Main function to start the game program. 
+
+Handles the user input for selecting a new game or loading a saved game, initializing the serial communication, and playing the selected game mode.
+
+\begin{DoxyReturn}{Returns}
+int Returns 0 upon successful execution. 
+\end{DoxyReturn}
+Ask the user if they want to start a new game or load a saved game.
+
+Ensures that the input is either 1 for New Game or 0 for Load Game.
+
+Main game loop based on the selected game mode.
+
+The loop allows the user to play in the selected mode and choose to play additional rounds or exit.
+
+Asks the user if they want to select a different game mode or exit.
+
+The user can choose to select a new mode or exit the program.
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8cpp_a4357ae4b81fecf249d80237ed567b433}\index{main.cpp@{main.cpp}!currentGameMode@{currentGameMode}}
+\index{currentGameMode@{currentGameMode}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{currentGameMode}{currentGameMode}}
+{\footnotesize\ttfamily \label{main_8cpp_a4357ae4b81fecf249d80237ed567b433} 
+int current\+Game\+Mode = -\/1}
+
+
+
+Current game mode (extern variable). 
+

@@ -1,0 +1,166 @@
+\doxysection{client/src/serial.cpp File Reference}
+\hypertarget{serial_8cpp}{}\label{serial_8cpp}\index{client/src/serial.cpp@{client/src/serial.cpp}}
+
+
+Contains functions for initializing and managing serial port communication.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include "{}serial.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::wstring \mbox{\hyperlink{serial_8cpp_a268235fc7077e49fb7623d477c5005ef}{string\+To\+WString}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Converts a std\+::string to a std\+::wstring. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8cpp_a6b1959d97dba90aea6567bf5d2d6bca0}{init\+Serial\+Port}} (const std\+::string \&port\+Name)
+\begin{DoxyCompactList}\small\item\em Initializes the serial port with specified settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8cpp_a1aceb1fcbcf9366c3c43d2eae542da9f}{send\+Message}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Sends a message to the serial port. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{serial_8cpp_a0889d3bdc4d89108a3eb52f81d1d893c}{receive\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Receives a message from the serial port. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8cpp_ac44f62abbe6df608384af65696f8162d}{close\+Serial\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Closes the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \mbox{\hyperlink{serial_8cpp_a23f559a9cd1d7e4648193a22a69a8f75}{h\+Serial}}
+\begin{DoxyCompactList}\small\item\em Handle to the serial port. \end{DoxyCompactList}\item 
+DCB \mbox{\hyperlink{serial_8cpp_a5e97bfd2768ed434757cd3c1eb964413}{dcb\+Serial\+Params}} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Serial port parameters (DCB structure). \end{DoxyCompactList}\item 
+COMMTIMEOUTS \mbox{\hyperlink{serial_8cpp_ae90ed8887baa4ec8f1398952fe1cfd31}{timeouts}} = \{ 0 \}
+\begin{DoxyCompactList}\small\item\em Timeout settings for serial port communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for initializing and managing serial port communication. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{serial_8cpp_ac44f62abbe6df608384af65696f8162d}\index{serial.cpp@{serial.cpp}!closeSerialPort@{closeSerialPort}}
+\index{closeSerialPort@{closeSerialPort}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{closeSerialPort()}{closeSerialPort()}}
+{\footnotesize\ttfamily \label{serial_8cpp_ac44f62abbe6df608384af65696f8162d} 
+void close\+Serial\+Port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Closes the serial port. 
+
+Closes the serial port and releases resources.
+
+This function closes the serial port and prints a confirmation message. \Hypertarget{serial_8cpp_a6b1959d97dba90aea6567bf5d2d6bca0}\index{serial.cpp@{serial.cpp}!initSerialPort@{initSerialPort}}
+\index{initSerialPort@{initSerialPort}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{initSerialPort()}{initSerialPort()}}
+{\footnotesize\ttfamily \label{serial_8cpp_a6b1959d97dba90aea6567bf5d2d6bca0} 
+void init\+Serial\+Port (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{port\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the serial port with specified settings. 
+
+Initializes the serial port with the specified port name.
+
+This function configures the serial port with the standard settings\+: 9600 baud rate, 8 data bits, 1 stop bit, and no parity. It also sets timeouts for read and write operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & The name of the serial port (e.\+g., "{}\+COM3"{}).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em exit(1)} & If the port cannot be opened. \\
+\hline
+\end{DoxyExceptions}
+\texorpdfstring{$<$}{<} Exit the program if the port cannot be opened.\Hypertarget{serial_8cpp_a0889d3bdc4d89108a3eb52f81d1d893c}\index{serial.cpp@{serial.cpp}!receiveMessage@{receiveMessage}}
+\index{receiveMessage@{receiveMessage}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{receiveMessage()}{receiveMessage()}}
+{\footnotesize\ttfamily \label{serial_8cpp_a0889d3bdc4d89108a3eb52f81d1d893c} 
+std\+::string receive\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Receives a message from the serial port. 
+
+Receives a message from the connected serial device.
+
+This function reads a message from the serial port into a buffer. It returns the received message as a std\+::string. If no message is received, an empty string is returned.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The message received from the serial port. 
+\end{DoxyReturn}
+\Hypertarget{serial_8cpp_a1aceb1fcbcf9366c3c43d2eae542da9f}\index{serial.cpp@{serial.cpp}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{serial_8cpp_a1aceb1fcbcf9366c3c43d2eae542da9f} 
+void send\+Message (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a message to the serial port. 
+
+Sends a message to the connected serial device.
+
+This function sends a null-\/terminated string (message) to the serial port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to send. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{serial_8cpp_a268235fc7077e49fb7623d477c5005ef}\index{serial.cpp@{serial.cpp}!stringToWString@{stringToWString}}
+\index{stringToWString@{stringToWString}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{stringToWString()}{stringToWString()}}
+{\footnotesize\ttfamily \label{serial_8cpp_a268235fc7077e49fb7623d477c5005ef} 
+std\+::wstring string\+To\+WString (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str}{}\end{DoxyParamCaption})}
+
+
+
+Converts a std\+::string to a std\+::wstring. 
+
+This helper function converts a narrow character string (std\+::string) to a wide character string (std\+::wstring), which is needed for working with the Windows API.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The std\+::string to be converted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::wstring The converted wide character string. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{serial_8cpp_a5e97bfd2768ed434757cd3c1eb964413}\index{serial.cpp@{serial.cpp}!dcbSerialParams@{dcbSerialParams}}
+\index{dcbSerialParams@{dcbSerialParams}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{dcbSerialParams}{dcbSerialParams}}
+{\footnotesize\ttfamily \label{serial_8cpp_a5e97bfd2768ed434757cd3c1eb964413} 
+DCB dcb\+Serial\+Params = \{ 0 \}}
+
+
+
+Serial port parameters (DCB structure). 
+
+\Hypertarget{serial_8cpp_a23f559a9cd1d7e4648193a22a69a8f75}\index{serial.cpp@{serial.cpp}!hSerial@{hSerial}}
+\index{hSerial@{hSerial}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{hSerial}{hSerial}}
+{\footnotesize\ttfamily \label{serial_8cpp_a23f559a9cd1d7e4648193a22a69a8f75} 
+HANDLE h\+Serial}
+
+
+
+Handle to the serial port. 
+
+Handle for the serial port. \Hypertarget{serial_8cpp_ae90ed8887baa4ec8f1398952fe1cfd31}\index{serial.cpp@{serial.cpp}!timeouts@{timeouts}}
+\index{timeouts@{timeouts}!serial.cpp@{serial.cpp}}
+\doxysubsubsection{\texorpdfstring{timeouts}{timeouts}}
+{\footnotesize\ttfamily \label{serial_8cpp_ae90ed8887baa4ec8f1398952fe1cfd31} 
+COMMTIMEOUTS timeouts = \{ 0 \}}
+
+
+
+Timeout settings for serial port communication. 
+

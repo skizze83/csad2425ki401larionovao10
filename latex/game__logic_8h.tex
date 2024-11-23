@@ -1,0 +1,114 @@
+\doxysection{client/include/game\+\_\+logic.h File Reference}
+\hypertarget{game__logic_8h}{}\label{game__logic_8h}\index{client/include/game\_logic.h@{client/include/game\_logic.h}}
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game__logic_8h_a3222a1a309361b0c7304a97df908d6af}{play\+Man\+Vs\+AI}} (std\+::string \&player1, std\+::string \&player2, std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Starts a Man vs AI game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_ab21e85b7f956d7e4ee91c95f1708b259}{play\+Man\+Vs\+Man}} (std\+::string \&player1, std\+::string \&player2, std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Starts a Man vs Man game. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a0071f6cbaa3c3bced8659b220940bc5e}{play\+AIVs\+AIRandom}} (std\+::string \&player1, std\+::string \&player2, std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Starts an AI vs AI game with random moves. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a131c1a8cba0cc6352788f04cda649ea0}{play\+AIVs\+AIWin\+Strategy}} (std\+::string \&player1, std\+::string \&player2, std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Starts an AI vs AI game with a winning strategy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a78cb6f23e041930482b3b1d3c57fda7c}{display\+Result}} (const std\+::string \&player1, const std\+::string \&player2, const std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Displays the result of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game__logic_8h_a78cb6f23e041930482b3b1d3c57fda7c}\index{game\_logic.h@{game\_logic.h}!displayResult@{displayResult}}
+\index{displayResult@{displayResult}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{displayResult()}{displayResult()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a78cb6f23e041930482b3b1d3c57fda7c} 
+void display\+Result (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player1}{, }\item[{const std\+::string \&}]{player2}{, }\item[{const std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Displays the result of the game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Player 1\textquotesingle{}s name. \\
+\hline
+{\em player2} & Player 2\textquotesingle{}s name. \\
+\hline
+{\em result} & The result of the game (Win/\+Loss/\+Draw). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a0071f6cbaa3c3bced8659b220940bc5e}\index{game\_logic.h@{game\_logic.h}!playAIVsAIRandom@{playAIVsAIRandom}}
+\index{playAIVsAIRandom@{playAIVsAIRandom}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{playAIVsAIRandom()}{playAIVsAIRandom()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a0071f6cbaa3c3bced8659b220940bc5e} 
+void play\+AIVs\+AIRandom (\begin{DoxyParamCaption}\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Starts an AI vs AI game with random moves. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & AI Player 1 (used for display). \\
+\hline
+{\em player2} & AI Player 2 (used for display). \\
+\hline
+{\em result} & The result of the game (Win/\+Loss/\+Draw). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a131c1a8cba0cc6352788f04cda649ea0}\index{game\_logic.h@{game\_logic.h}!playAIVsAIWinStrategy@{playAIVsAIWinStrategy}}
+\index{playAIVsAIWinStrategy@{playAIVsAIWinStrategy}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{playAIVsAIWinStrategy()}{playAIVsAIWinStrategy()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a131c1a8cba0cc6352788f04cda649ea0} 
+void play\+AIVs\+AIWin\+Strategy (\begin{DoxyParamCaption}\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Starts an AI vs AI game with a winning strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & AI Player 1 (used for display). \\
+\hline
+{\em player2} & AI Player 2 (used for display). \\
+\hline
+{\em result} & The result of the game (Win/\+Loss/\+Draw). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_a3222a1a309361b0c7304a97df908d6af}\index{game\_logic.h@{game\_logic.h}!playManVsAI@{playManVsAI}}
+\index{playManVsAI@{playManVsAI}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{playManVsAI()}{playManVsAI()}}
+{\footnotesize\ttfamily \label{game__logic_8h_a3222a1a309361b0c7304a97df908d6af} 
+void play\+Man\+Vs\+AI (\begin{DoxyParamCaption}\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Starts a Man vs AI game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Player 1\textquotesingle{}s name. \\
+\hline
+{\em player2} & Player 2\textquotesingle{}s name (AI). \\
+\hline
+{\em result} & The result of the game (Win/\+Loss/\+Draw). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8h_ab21e85b7f956d7e4ee91c95f1708b259}\index{game\_logic.h@{game\_logic.h}!playManVsMan@{playManVsMan}}
+\index{playManVsMan@{playManVsMan}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{playManVsMan()}{playManVsMan()}}
+{\footnotesize\ttfamily \label{game__logic_8h_ab21e85b7f956d7e4ee91c95f1708b259} 
+void play\+Man\+Vs\+Man (\begin{DoxyParamCaption}\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Starts a Man vs Man game. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & Player 1\textquotesingle{}s name. \\
+\hline
+{\em player2} & Player 2\textquotesingle{}s name. \\
+\hline
+{\em result} & The result of the game (Win/\+Loss/\+Draw). \\
+\hline
+\end{DoxyParams}

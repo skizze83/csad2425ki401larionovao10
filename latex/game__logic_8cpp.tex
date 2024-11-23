@@ -1,0 +1,143 @@
+\doxysection{client/src/game\+\_\+logic.cpp File Reference}
+\hypertarget{game__logic_8cpp}{}\label{game__logic_8cpp}\index{client/src/game\_logic.cpp@{client/src/game\_logic.cpp}}
+
+
+Implements the game logic for different game modes.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include "{}game\+\_\+logic.\+h"{}}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}serial.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game__logic_8cpp_a13d0988cd812f797e20f15bc8de51896}{play\+Man\+Vs\+AI}} (string \&player1, string \&player2, string \&result)
+\begin{DoxyCompactList}\small\item\em Plays the game between the user (Player 1) and the AI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8cpp_aa5947d31518ed0d78903f87b986d5d83}{play\+Man\+Vs\+Man}} (string \&player1, string \&player2, string \&result)
+\begin{DoxyCompactList}\small\item\em Plays the game between two human players. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8cpp_ae831e5ea2679b4402df6d94eb889d047}{play\+AIVs\+AIRandom}} (string \&player1, string \&player2, string \&result)
+\begin{DoxyCompactList}\small\item\em Plays an AI vs AI game with random strategies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8cpp_afbc8e3e4737c73dabab0f3afb9afbaeb}{play\+AIVs\+AIWin\+Strategy}} (string \&player1, string \&player2, string \&result)
+\begin{DoxyCompactList}\small\item\em Plays an AI vs AI game with a win-\/strategy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8cpp_ac765e043d869ea0fec667e82275ffc22}{display\+Result}} (const string \&player1, const string \&player2, const string \&result)
+\begin{DoxyCompactList}\small\item\em Displays the result of the game, including players\textquotesingle{} choices and the winner. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements the game logic for different game modes. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game__logic_8cpp_ac765e043d869ea0fec667e82275ffc22}\index{game\_logic.cpp@{game\_logic.cpp}!displayResult@{displayResult}}
+\index{displayResult@{displayResult}!game\_logic.cpp@{game\_logic.cpp}}
+\doxysubsubsection{\texorpdfstring{displayResult()}{displayResult()}}
+{\footnotesize\ttfamily \label{game__logic_8cpp_ac765e043d869ea0fec667e82275ffc22} 
+void display\+Result (\begin{DoxyParamCaption}\item[{const string \&}]{player1}{, }\item[{const string \&}]{player2}{, }\item[{const string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Displays the result of the game, including players\textquotesingle{} choices and the winner. 
+
+This function prints the choices made by Player 1 and Player 2, and highlights the winner in green or red. The result (win, draw) is also displayed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The choice made by Player 1. \\
+\hline
+{\em player2} & The choice made by Player 2. \\
+\hline
+{\em result} & The result of the game ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} ANSI escape code for green text
+
+\texorpdfstring{$<$}{<} ANSI escape code for red text
+
+\texorpdfstring{$<$}{<} ANSI escape code to reset text color\Hypertarget{game__logic_8cpp_ae831e5ea2679b4402df6d94eb889d047}\index{game\_logic.cpp@{game\_logic.cpp}!playAIVsAIRandom@{playAIVsAIRandom}}
+\index{playAIVsAIRandom@{playAIVsAIRandom}!game\_logic.cpp@{game\_logic.cpp}}
+\doxysubsubsection{\texorpdfstring{playAIVsAIRandom()}{playAIVsAIRandom()}}
+{\footnotesize\ttfamily \label{game__logic_8cpp_ae831e5ea2679b4402df6d94eb889d047} 
+void play\+AIVs\+AIRandom (\begin{DoxyParamCaption}\item[{string \&}]{player1}{, }\item[{string \&}]{player2}{, }\item[{string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Plays an AI vs AI game with random strategies. 
+
+This function sends the "{}\+AI\+\_\+vs\+\_\+\+AI\+\_\+random"{} command to the Arduino, then receives and parses the result of the game between the two AIs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The string to store Player 1\textquotesingle{}s choice (AI). \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice (AI). \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8cpp_afbc8e3e4737c73dabab0f3afb9afbaeb}\index{game\_logic.cpp@{game\_logic.cpp}!playAIVsAIWinStrategy@{playAIVsAIWinStrategy}}
+\index{playAIVsAIWinStrategy@{playAIVsAIWinStrategy}!game\_logic.cpp@{game\_logic.cpp}}
+\doxysubsubsection{\texorpdfstring{playAIVsAIWinStrategy()}{playAIVsAIWinStrategy()}}
+{\footnotesize\ttfamily \label{game__logic_8cpp_afbc8e3e4737c73dabab0f3afb9afbaeb} 
+void play\+AIVs\+AIWin\+Strategy (\begin{DoxyParamCaption}\item[{string \&}]{player1}{, }\item[{string \&}]{player2}{, }\item[{string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Plays an AI vs AI game with a win-\/strategy. 
+
+This function sends the "{}\+AI\+\_\+vs\+\_\+\+AI\+\_\+win\+\_\+strategy"{} command to the Arduino, then receives and parses the result of the game between the two AIs using the win strategy.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The string to store Player 1\textquotesingle{}s choice (AI). \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice (AI). \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8cpp_a13d0988cd812f797e20f15bc8de51896}\index{game\_logic.cpp@{game\_logic.cpp}!playManVsAI@{playManVsAI}}
+\index{playManVsAI@{playManVsAI}!game\_logic.cpp@{game\_logic.cpp}}
+\doxysubsubsection{\texorpdfstring{playManVsAI()}{playManVsAI()}}
+{\footnotesize\ttfamily \label{game__logic_8cpp_a13d0988cd812f797e20f15bc8de51896} 
+void play\+Man\+Vs\+AI (\begin{DoxyParamCaption}\item[{string \&}]{player1}{, }\item[{string \&}]{player2}{, }\item[{string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Plays the game between the user (Player 1) and the AI. 
+
+This function gets the player\textquotesingle{}s choice, sends it to the Arduino, and then receives and parses the AI\textquotesingle{}s response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The string to store Player 1\textquotesingle{}s choice. \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice (AI). \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game__logic_8cpp_aa5947d31518ed0d78903f87b986d5d83}\index{game\_logic.cpp@{game\_logic.cpp}!playManVsMan@{playManVsMan}}
+\index{playManVsMan@{playManVsMan}!game\_logic.cpp@{game\_logic.cpp}}
+\doxysubsubsection{\texorpdfstring{playManVsMan()}{playManVsMan()}}
+{\footnotesize\ttfamily \label{game__logic_8cpp_aa5947d31518ed0d78903f87b986d5d83} 
+void play\+Man\+Vs\+Man (\begin{DoxyParamCaption}\item[{string \&}]{player1}{, }\item[{string \&}]{player2}{, }\item[{string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Plays the game between two human players. 
+
+This function allows Player 1 and Player 2 to input their choices, sends them to the Arduino, and then receives and parses the game result.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The string to store Player 1\textquotesingle{}s choice. \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice. \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}

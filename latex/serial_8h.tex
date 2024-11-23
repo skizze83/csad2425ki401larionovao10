@@ -1,0 +1,154 @@
+\doxysection{client/include/serial.h File Reference}
+\hypertarget{serial_8h}{}\label{serial_8h}\index{client/include/serial.h@{client/include/serial.h}}
+
+
+Header file for handling serial port communication.  
+
+
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{serial_8h_abd89d9fc65aaf89bc50e9b1252ca1bdd}{SERIAL\+\_\+H}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{serial_8h_a6b1959d97dba90aea6567bf5d2d6bca0}{init\+Serial\+Port}} (const std\+::string \&port\+Name)
+\begin{DoxyCompactList}\small\item\em Initializes the serial port with the specified port name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8h_a1aceb1fcbcf9366c3c43d2eae542da9f}{send\+Message}} (const char \texorpdfstring{$\ast$}{*}message)
+\begin{DoxyCompactList}\small\item\em Sends a message to the connected serial device. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{serial_8h_a0889d3bdc4d89108a3eb52f81d1d893c}{receive\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Receives a message from the connected serial device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{serial_8h_ac44f62abbe6df608384af65696f8162d}{close\+Serial\+Port}} ()
+\begin{DoxyCompactList}\small\item\em Closes the serial port and releases resources. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \mbox{\hyperlink{serial_8h_a23f559a9cd1d7e4648193a22a69a8f75}{h\+Serial}}
+\begin{DoxyCompactList}\small\item\em Handle for the serial port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for handling serial port communication. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{serial_8h_abd89d9fc65aaf89bc50e9b1252ca1bdd}\index{serial.h@{serial.h}!SERIAL\_H@{SERIAL\_H}}
+\index{SERIAL\_H@{SERIAL\_H}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{SERIAL\_H}{SERIAL\_H}}
+{\footnotesize\ttfamily \label{serial_8h_abd89d9fc65aaf89bc50e9b1252ca1bdd} 
+\#define SERIAL\+\_\+H}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{serial_8h_ac44f62abbe6df608384af65696f8162d}\index{serial.h@{serial.h}!closeSerialPort@{closeSerialPort}}
+\index{closeSerialPort@{closeSerialPort}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{closeSerialPort()}{closeSerialPort()}}
+{\footnotesize\ttfamily \label{serial_8h_ac44f62abbe6df608384af65696f8162d} 
+void close\+Serial\+Port (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Closes the serial port and releases resources. 
+
+This function closes the serial port handle and releases any resources associated with it.
+
+Closes the serial port and releases resources.
+
+This function closes the serial port and prints a confirmation message. \Hypertarget{serial_8h_a6b1959d97dba90aea6567bf5d2d6bca0}\index{serial.h@{serial.h}!initSerialPort@{initSerialPort}}
+\index{initSerialPort@{initSerialPort}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{initSerialPort()}{initSerialPort()}}
+{\footnotesize\ttfamily \label{serial_8h_a6b1959d97dba90aea6567bf5d2d6bca0} 
+void init\+Serial\+Port (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{port\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Initializes the serial port with the specified port name. 
+
+This function sets up the serial port with necessary parameters, including baud rate, byte size, stop bits, parity, and timeouts. It also opens the serial port for communication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & The name of the serial port to initialize (e.\+g., "{}\+COM1"{}, "{}\+COM3"{}).\\
+\hline
+\end{DoxyParams}
+Initializes the serial port with the specified port name.
+
+This function configures the serial port with the standard settings\+: 9600 baud rate, 8 data bits, 1 stop bit, and no parity. It also sets timeouts for read and write operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port\+Name} & The name of the serial port (e.\+g., "{}\+COM3"{}).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em exit(1)} & If the port cannot be opened. \\
+\hline
+\end{DoxyExceptions}
+\texorpdfstring{$<$}{<} Exit the program if the port cannot be opened.\Hypertarget{serial_8h_a0889d3bdc4d89108a3eb52f81d1d893c}\index{serial.h@{serial.h}!receiveMessage@{receiveMessage}}
+\index{receiveMessage@{receiveMessage}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{receiveMessage()}{receiveMessage()}}
+{\footnotesize\ttfamily \label{serial_8h_a0889d3bdc4d89108a3eb52f81d1d893c} 
+std\+::string receive\+Message (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Receives a message from the connected serial device. 
+
+This function reads data from the serial port and returns the received message.
+
+\begin{DoxyReturn}{Returns}
+The received message as a string.
+\end{DoxyReturn}
+Receives a message from the connected serial device.
+
+This function reads a message from the serial port into a buffer. It returns the received message as a std\+::string. If no message is received, an empty string is returned.
+
+\begin{DoxyReturn}{Returns}
+std\+::string The message received from the serial port. 
+\end{DoxyReturn}
+\Hypertarget{serial_8h_a1aceb1fcbcf9366c3c43d2eae542da9f}\index{serial.h@{serial.h}!sendMessage@{sendMessage}}
+\index{sendMessage@{sendMessage}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{sendMessage()}{sendMessage()}}
+{\footnotesize\ttfamily \label{serial_8h_a1aceb1fcbcf9366c3c43d2eae542da9f} 
+void send\+Message (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{message}{}\end{DoxyParamCaption})}
+
+
+
+Sends a message to the connected serial device. 
+
+This function writes the provided message to the serial port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to be sent to the serial device.\\
+\hline
+\end{DoxyParams}
+Sends a message to the connected serial device.
+
+This function sends a null-\/terminated string (message) to the serial port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to send. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{serial_8h_a23f559a9cd1d7e4648193a22a69a8f75}\index{serial.h@{serial.h}!hSerial@{hSerial}}
+\index{hSerial@{hSerial}!serial.h@{serial.h}}
+\doxysubsubsection{\texorpdfstring{hSerial}{hSerial}}
+{\footnotesize\ttfamily \label{serial_8h_a23f559a9cd1d7e4648193a22a69a8f75} 
+HANDLE h\+Serial\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Handle for the serial port. 
+
+Handle for the serial port. 

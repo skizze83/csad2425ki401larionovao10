@@ -1,0 +1,75 @@
+\doxysection{client/include/menu.h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{client/include/menu.h@{client/include/menu.h}}
+
+
+Header file for displaying the game menu and getting user input.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the game menu with available modes. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8h_a959adb0e74157c019e0e48aaebfaaf6b}{get\+Validated\+Choice}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Prompts the user for a valid choice between the specified minimum and maximum values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for displaying the game menu and getting user input. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a959adb0e74157c019e0e48aaebfaaf6b}\index{menu.h@{menu.h}!getValidatedChoice@{getValidatedChoice}}
+\index{getValidatedChoice@{getValidatedChoice}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{getValidatedChoice()}{getValidatedChoice()}}
+{\footnotesize\ttfamily \label{menu_8h_a959adb0e74157c019e0e48aaebfaaf6b} 
+int get\+Validated\+Choice (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user for a valid choice between the specified minimum and maximum values. 
+
+This function ensures that the input is within the specified range and returns the user\textquotesingle{}s valid choice.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum valid choice. \\
+\hline
+{\em max} & The maximum valid choice. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The user\textquotesingle{}s valid choice.
+\end{DoxyReturn}
+Prompts the user for a valid choice between the specified minimum and maximum values.
+
+This function repeatedly asks the user to input a number and validates that the choice is within the specified range (min to max). If the input is invalid, the user will be prompted again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum valid value for the choice. \\
+\hline
+{\em max} & The maximum valid value for the choice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The validated choice entered by the user. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Clears the input buffer.
+
+\texorpdfstring{$<$}{<} Clears the error flag on the input stream.
+
+\texorpdfstring{$<$}{<} Clears the input buffer.\Hypertarget{menu_8h_a2a0e843767aeea4f433a28b9c54f573a}\index{menu.h@{menu.h}!menu@{menu}}
+\index{menu@{menu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \label{menu_8h_a2a0e843767aeea4f433a28b9c54f573a} 
+void menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the game menu with available modes. 
+
+Displays the game menu with available modes.
+
+This function prints a list of game modes to the console, allowing the user to choose a game mode to start. The options include different modes for playing against AI or another player. 

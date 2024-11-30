@@ -1,0 +1,24 @@
+\doxysection{serial.\+h}
+\hypertarget{serial_8h_source}{}\label{serial_8h_source}\index{client/include/serial.h@{client/include/serial.h}}
+\mbox{\hyperlink{serial_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ SERIAL\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ SERIAL\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{extern}\ HANDLE\ \mbox{\hyperlink{serial_8h_a23f559a9cd1d7e4648193a22a69a8f75}{hSerial}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serial_8h_a6b1959d97dba90aea6567bf5d2d6bca0}{initSerialPort}}(\textcolor{keyword}{const}\ std::string\&\ portName);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serial_8h_a1aceb1fcbcf9366c3c43d2eae542da9f}{sendMessage}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ message);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00044\ std::string\ \mbox{\hyperlink{serial_8h_a0889d3bdc4d89108a3eb52f81d1d893c}{receiveMessage}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{serial_8h_ac44f62abbe6df608384af65696f8162d}{closeSerialPort}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,231 @@
+\doxysection{client/src/game.cpp File Reference}
+\hypertarget{game_8cpp}{}\label{game_8cpp}\index{client/src/game.cpp@{client/src/game.cpp}}
+
+
+Contains functions for managing game state, processing player choices, and handling game statistics.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$regex$>$}\newline
+{\ttfamily \#include "{}game.\+h"{}}\newline
+{\ttfamily \#include "{}serial.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{game_8cpp_afd67b24eff509ab7eadf98830848cf6c}{get\+Choice\+From\+Number}} (int number)
+\begin{DoxyCompactList}\small\item\em Converts a number to the corresponding string representation of a player\textquotesingle{}s choice. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{game_8cpp_add4a368b9efef5b3b4b528b93bf5ac72}{get\+User\+Choice}} ()
+\begin{DoxyCompactList}\small\item\em Prompts the user to enter their choice and returns the corresponding string representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8cpp_a326e1021da44b775e119624218ec2d25}{parse\+Response}} (const std\+::string \&response, std\+::string \&player1, std\+::string \&player2, std\+::string \&result)
+\begin{DoxyCompactList}\small\item\em Parses the server response and extracts player choices and game result. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8cpp_a8d5316d7f9af1c4d08736ab168f2d907}{reset\+Statistics}} ()
+\begin{DoxyCompactList}\small\item\em Resets the game statistics (wins, draws, and total games). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game_8cpp_a684ac1bfc7c8f233780e673e057fa03e}{save\+Game\+State}} (const std\+::string \&player1, const std\+::string \&player2, const std\+::string \&result, int \mbox{\hyperlink{main_8cpp_a4357ae4b81fecf249d80237ed567b433}{current\+Game\+Mode}}, bool reset\+Stats=true)
+\begin{DoxyCompactList}\small\item\em Saves the current game state to an XML file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game_8cpp_a20a3f3c914af56093685cba3c2490fa1}{load\+Game\+State}} (std\+::string \&player1, std\+::string \&player2, std\+::string \&result, int \&\mbox{\hyperlink{main_8cpp_a4357ae4b81fecf249d80237ed567b433}{current\+Game\+Mode}})
+\begin{DoxyCompactList}\small\item\em Loads the saved game state from the "{}game\+\_\+state.\+xml"{} file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game_8cpp_a832b1623ab8955c23d2fac9b418a59d2}{player1\+Wins}} = 0
+\begin{DoxyCompactList}\small\item\em Number of wins for player 1 (extern variable). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8cpp_afda1dc062165d780914f017410ee708b}{player2\+Wins}} = 0
+\begin{DoxyCompactList}\small\item\em Number of wins for player 2 (extern variable). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8cpp_adc251e9b0a1fa5ef4b8da95fc5b79535}{draws}} = 0
+\begin{DoxyCompactList}\small\item\em Number of draws (extern variable). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8cpp_a184559da2c495bb82ca10df571e6e1ea}{total\+Games}} = 0
+\begin{DoxyCompactList}\small\item\em Total number of games played (extern variable). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{game_8cpp_abe2e3f90626aa62d81dd7bcc9a583654}{last\+Game\+Mode}} = -\/1
+\begin{DoxyCompactList}\small\item\em Initial value to determine the mode change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for managing game state, processing player choices, and handling game statistics. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{game_8cpp_afd67b24eff509ab7eadf98830848cf6c}\index{game.cpp@{game.cpp}!getChoiceFromNumber@{getChoiceFromNumber}}
+\index{getChoiceFromNumber@{getChoiceFromNumber}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{getChoiceFromNumber()}{getChoiceFromNumber()}}
+{\footnotesize\ttfamily \label{game_8cpp_afd67b24eff509ab7eadf98830848cf6c} 
+std\+::string get\+Choice\+From\+Number (\begin{DoxyParamCaption}\item[{int}]{number}{}\end{DoxyParamCaption})}
+
+
+
+Converts a number to the corresponding string representation of a player\textquotesingle{}s choice. 
+
+Converts a player\textquotesingle{}s choice number to a string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The number representing a choice (1 for rock, 2 for scissors, 3 for paper). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A string representing the choice ("{}rock"{}, "{}scissors"{}, or "{}paper"{}). 
+\end{DoxyReturn}
+\Hypertarget{game_8cpp_add4a368b9efef5b3b4b528b93bf5ac72}\index{game.cpp@{game.cpp}!getUserChoice@{getUserChoice}}
+\index{getUserChoice@{getUserChoice}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{getUserChoice()}{getUserChoice()}}
+{\footnotesize\ttfamily \label{game_8cpp_add4a368b9efef5b3b4b528b93bf5ac72} 
+std\+::string get\+User\+Choice (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user to enter their choice and returns the corresponding string representation. 
+
+Gets the user\textquotesingle{}s choice for the game.
+
+This function continues to ask for input until the user enters a valid choice (1, 2, or 3).
+
+\begin{DoxyReturn}{Returns}
+A string representing the user\textquotesingle{}s choice ("{}rock"{}, "{}scissors"{}, or "{}paper"{}). 
+\end{DoxyReturn}
+\Hypertarget{game_8cpp_a20a3f3c914af56093685cba3c2490fa1}\index{game.cpp@{game.cpp}!loadGameState@{loadGameState}}
+\index{loadGameState@{loadGameState}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{loadGameState()}{loadGameState()}}
+{\footnotesize\ttfamily \label{game_8cpp_a20a3f3c914af56093685cba3c2490fa1} 
+bool load\+Game\+State (\begin{DoxyParamCaption}\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{, }\item[{int \&}]{current\+Game\+Mode}{}\end{DoxyParamCaption})}
+
+
+
+Loads the saved game state from the "{}game\+\_\+state.\+xml"{} file. 
+
+Loads the game state from a file.
+
+This function reads the saved game state from the XML file, including the players\textquotesingle{} choices, the result, and statistics.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The string to store Player 1\textquotesingle{}s choice. \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice. \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+{\em current\+Game\+Mode} & The integer to store the current game mode. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the game state was successfully loaded; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{game_8cpp_a326e1021da44b775e119624218ec2d25}\index{game.cpp@{game.cpp}!parseResponse@{parseResponse}}
+\index{parseResponse@{parseResponse}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{parseResponse()}{parseResponse()}}
+{\footnotesize\ttfamily \label{game_8cpp_a326e1021da44b775e119624218ec2d25} 
+void parse\+Response (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{response}{, }\item[{std\+::string \&}]{player1}{, }\item[{std\+::string \&}]{player2}{, }\item[{std\+::string \&}]{result}{}\end{DoxyParamCaption})}
+
+
+
+Parses the server response and extracts player choices and game result. 
+
+Parses the game result response.
+
+The function uses regular expressions to extract the information from the server response string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em response} & The server response in JSON format. \\
+\hline
+{\em player1} & The string to store Player 1\textquotesingle{}s choice. \\
+\hline
+{\em player2} & The string to store Player 2\textquotesingle{}s choice. \\
+\hline
+{\em result} & The string to store the game result ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{game_8cpp_a8d5316d7f9af1c4d08736ab168f2d907}\index{game.cpp@{game.cpp}!resetStatistics@{resetStatistics}}
+\index{resetStatistics@{resetStatistics}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{resetStatistics()}{resetStatistics()}}
+{\footnotesize\ttfamily \label{game_8cpp_a8d5316d7f9af1c4d08736ab168f2d907} 
+void reset\+Statistics (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Resets the game statistics (wins, draws, and total games). 
+
+Resets the game statistics (wins, losses, draws, total games).
+
+This function is called to reset the statistics at the start of a new game mode or to clear accumulated statistics. \Hypertarget{game_8cpp_a684ac1bfc7c8f233780e673e057fa03e}\index{game.cpp@{game.cpp}!saveGameState@{saveGameState}}
+\index{saveGameState@{saveGameState}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{saveGameState()}{saveGameState()}}
+{\footnotesize\ttfamily \label{game_8cpp_a684ac1bfc7c8f233780e673e057fa03e} 
+void save\+Game\+State (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player1}{, }\item[{const std\+::string \&}]{player2}{, }\item[{const std\+::string \&}]{result}{, }\item[{int}]{current\+Game\+Mode}{, }\item[{bool}]{reset\+Stats}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+
+
+
+Saves the current game state to an XML file. 
+
+Saves the game state to a file.
+
+This function writes the current game state, including the players\textquotesingle{} choices, the result, and statistics, to the "{}game\+\_\+state.\+xml"{} file. It also resets statistics if a new game mode is selected.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player1} & The choice made by Player 1. \\
+\hline
+{\em player2} & The choice made by Player 2. \\
+\hline
+{\em result} & The result of the game ("{}\+Player 1 wins"{}, "{}\+Player 2 wins"{}, or "{}draw"{}). \\
+\hline
+{\em current\+Game\+Mode} & The current game mode. \\
+\hline
+{\em reset\+Stats} & Whether to reset the statistics (default is true). \\
+\hline
+\end{DoxyParams}
+\texorpdfstring{$<$}{<} Reset the total number of games when changing the mode
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{game_8cpp_adc251e9b0a1fa5ef4b8da95fc5b79535}\index{game.cpp@{game.cpp}!draws@{draws}}
+\index{draws@{draws}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{draws}{draws}}
+{\footnotesize\ttfamily \label{game_8cpp_adc251e9b0a1fa5ef4b8da95fc5b79535} 
+int draws = 0}
+
+
+
+Number of draws (extern variable). 
+
+\Hypertarget{game_8cpp_abe2e3f90626aa62d81dd7bcc9a583654}\index{game.cpp@{game.cpp}!lastGameMode@{lastGameMode}}
+\index{lastGameMode@{lastGameMode}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{lastGameMode}{lastGameMode}}
+{\footnotesize\ttfamily \label{game_8cpp_abe2e3f90626aa62d81dd7bcc9a583654} 
+int last\+Game\+Mode = -\/1}
+
+
+
+Initial value to determine the mode change. 
+
+Last used game mode (extern variable). \Hypertarget{game_8cpp_a832b1623ab8955c23d2fac9b418a59d2}\index{game.cpp@{game.cpp}!player1Wins@{player1Wins}}
+\index{player1Wins@{player1Wins}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{player1Wins}{player1Wins}}
+{\footnotesize\ttfamily \label{game_8cpp_a832b1623ab8955c23d2fac9b418a59d2} 
+int player1\+Wins = 0}
+
+
+
+Number of wins for player 1 (extern variable). 
+
+\Hypertarget{game_8cpp_afda1dc062165d780914f017410ee708b}\index{game.cpp@{game.cpp}!player2Wins@{player2Wins}}
+\index{player2Wins@{player2Wins}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{player2Wins}{player2Wins}}
+{\footnotesize\ttfamily \label{game_8cpp_afda1dc062165d780914f017410ee708b} 
+int player2\+Wins = 0}
+
+
+
+Number of wins for player 2 (extern variable). 
+
+\Hypertarget{game_8cpp_a184559da2c495bb82ca10df571e6e1ea}\index{game.cpp@{game.cpp}!totalGames@{totalGames}}
+\index{totalGames@{totalGames}!game.cpp@{game.cpp}}
+\doxysubsubsection{\texorpdfstring{totalGames}{totalGames}}
+{\footnotesize\ttfamily \label{game_8cpp_a184559da2c495bb82ca10df571e6e1ea} 
+int total\+Games = 0}
+
+
+
+Total number of games played (extern variable). 
+

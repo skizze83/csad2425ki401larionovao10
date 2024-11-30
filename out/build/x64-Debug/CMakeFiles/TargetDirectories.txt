@@ -1,0 +1,3 @@
+D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10/out/build/x64-Debug/CMakeFiles/RockPaperScissors.dir
+D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10/out/build/x64-Debug/CMakeFiles/edit_cache.dir
+D:/Dessties/LPNU/CSAD/csad2425ki401larionovao10/out/build/x64-Debug/CMakeFiles/rebuild_cache.dir

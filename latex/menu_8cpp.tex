@@ -1,0 +1,65 @@
+\doxysection{client/src/menu.cpp File Reference}
+\hypertarget{menu_8cpp}{}\label{menu_8cpp}\index{client/src/menu.cpp@{client/src/menu.cpp}}
+
+
+Contains functions for displaying the game menu and validating user input.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include "{}menu.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the game menu with options for the player. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{menu_8cpp_a959adb0e74157c019e0e48aaebfaaf6b}{get\+Validated\+Choice}} (int min, int max)
+\begin{DoxyCompactList}\small\item\em Prompts the user for a valid choice within a specified range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Contains functions for displaying the game menu and validating user input. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8cpp_a959adb0e74157c019e0e48aaebfaaf6b}\index{menu.cpp@{menu.cpp}!getValidatedChoice@{getValidatedChoice}}
+\index{getValidatedChoice@{getValidatedChoice}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{getValidatedChoice()}{getValidatedChoice()}}
+{\footnotesize\ttfamily \label{menu_8cpp_a959adb0e74157c019e0e48aaebfaaf6b} 
+int get\+Validated\+Choice (\begin{DoxyParamCaption}\item[{int}]{min}{, }\item[{int}]{max}{}\end{DoxyParamCaption})}
+
+
+
+Prompts the user for a valid choice within a specified range. 
+
+Prompts the user for a valid choice between the specified minimum and maximum values.
+
+This function repeatedly asks the user to input a number and validates that the choice is within the specified range (min to max). If the input is invalid, the user will be prompted again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & The minimum valid value for the choice. \\
+\hline
+{\em max} & The maximum valid value for the choice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The validated choice entered by the user. 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} Clears the input buffer.
+
+\texorpdfstring{$<$}{<} Clears the error flag on the input stream.
+
+\texorpdfstring{$<$}{<} Clears the input buffer.\Hypertarget{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a}\index{menu.cpp@{menu.cpp}!menu@{menu}}
+\index{menu@{menu}!menu.cpp@{menu.cpp}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \label{menu_8cpp_a2a0e843767aeea4f433a28b9c54f573a} 
+void menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Displays the game menu with options for the player. 
+
+Displays the game menu with available modes.
+
+This function prints a list of game modes to the console, allowing the user to choose a game mode to start. The options include different modes for playing against AI or another player. 

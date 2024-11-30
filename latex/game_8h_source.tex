@@ -1,0 +1,39 @@
+\doxysection{game.\+h}
+\hypertarget{game_8h_source}{}\label{game_8h_source}\index{client/include/game.h@{client/include/game.h}}
+\mbox{\hyperlink{game_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ GAME\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ GAME\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00018\ std::string\ \mbox{\hyperlink{game_8h_afd67b24eff509ab7eadf98830848cf6c}{getChoiceFromNumber}}(\textcolor{keywordtype}{int}\ number);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00024\ std::string\ \mbox{\hyperlink{game_8h_add4a368b9efef5b3b4b528b93bf5ac72}{getUserChoice}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a326e1021da44b775e119624218ec2d25}{parseResponse}}(\textcolor{keyword}{const}\ std::string\&\ response,\ std::string\&\ player1,\ std::string\&\ player2,\ std::string\&\ result);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a799f58c6ec20aa75ce40c08c247996f4}{saveGameState}}(\textcolor{keyword}{const}\ std::string\&\ player1,\ \textcolor{keyword}{const}\ std::string\&\ player2,\ \textcolor{keyword}{const}\ std::string\&\ result,\ \textcolor{keywordtype}{int}\ gameMode,\ \textcolor{keywordtype}{bool}\ isLoadedGame);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{game_8h_a65dfe3f5a59eb24625068f28b84a59ef}{loadGameState}}(std::string\&\ player1,\ std::string\&\ player2,\ std::string\&\ result,\ \textcolor{keywordtype}{int}\&\ gameMode);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ std::string\ \mbox{\hyperlink{game_8h_adbbaf798866dabbb3c487545629ded36}{getAIChoiceFromServer}}();}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{game_8h_a8d5316d7f9af1c4d08736ab168f2d907}{resetStatistics}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_abe2e3f90626aa62d81dd7bcc9a583654}{lastGameMode}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a832b1623ab8955c23d2fac9b418a59d2}{player1Wins}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_afda1dc062165d780914f017410ee708b}{player2Wins}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_adc251e9b0a1fa5ef4b8da95fc5b79535}{draws}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a184559da2c495bb82ca10df571e6e1ea}{totalGames}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{game_8h_a4357ae4b81fecf249d80237ed567b433}{currentGameMode}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
